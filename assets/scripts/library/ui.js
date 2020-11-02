@@ -3,7 +3,7 @@
 const showGamesSuccess = function (response) {
   $('#allMyGames').html('')
   if (response.games.length === 0) {
-    $('#allMyGames').append('<p>You don\'t seem to have any books, why dont you add some</p>')
+    $('#allMyGames').append('<p>Add some games</p>')
   }
   for (let i = 0; i < response.games.length; i++) {
     $('#allMyGames').append(
