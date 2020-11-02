@@ -2,10 +2,35 @@
 
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
-
+const authEvents = require('./auth/events')
+const authUi = require('./auth/ui')
+const libraryEvents = require('./library/events')
+const libraryUi = require('./library/ui')
 // use require without a reference to ensure a file is bundled
 // require('./example')
 
 $(() => {
-  // your JS code goes here
+  $('#sign-up-form').on('submit', authEvents.onSignUp)
+  $('#sign-in-form').on('submit', authEvents.onSignIn)
+  $('#pass-change-form').on('submit', authEvents.onPassChange)
+  $('#signOut').on('click', authEvents.onSignOut)
+  $('#sign-in-button').on('click', authUi.onSignInButton)
+  $('#sign-up-button').on('click', authUi.onSignUpButton)
+  $('#change').on('click', authUi.changePassForm)
+  $('#getGames').on('click', libraryEvents.getGames)
+  $('#game-create').on('submit', libraryEvents.createNewGame)
+  $('#allMyGames').on('click', '.delete-button', libraryEvents.deleteGame)
+  $('#allMyGames').on('click', '.update-button', libraryUi.updateShow)
+  $('#allMyGames').on('submit', '.game-update', libraryEvents.updateGame)
+  $('#pass-change-form').hide()
+  $('#pass-change-button').hide()
+  $('#owner').hide()
+  $('#getGames').hide()
+  $('#game-create').hide()
+  $('#signOut').hide()
+  $('#sign-up-form').hide()
+  $('#sign-in-form').hide()
+  $('#signInButton').on('click', libraryUi.showSignInForm)
+  $('#signUpButton').on('click', libraryUi.showSignUpForm)
+  $('#pass-change-button').on('click', libraryUi.showPassChangeForm)
 })

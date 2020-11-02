@@ -2,7 +2,7 @@
 
 let apiUrl
 const apiUrls = {
-  production: '<replace-with-heroku-url>',
+  production: 'https://fierce-forest-77831.herokuapp.com/',
   development: 'http://localhost:4741'
 }
 
